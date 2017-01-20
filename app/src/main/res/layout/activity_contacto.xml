@@ -10,4 +10,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.luis.agenda.Contacto">
 
+    <Button
+        android:text="Buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/busquedaContactoBtn" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignBottom="@+id/busquedaContactoBtn"
+        android:layout_alignParentStart="true"
+        android:id="@+id/busquedaContactoET"
+        android:layout_toStartOf="@+id/busquedaContactoBtn"
+        android:hint="Introduce nombre ó apellido" />
+
+    <Button
+        android:text="Agregar Contacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/agregarContactoBtn"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/busquedaContactoET"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/agregarContactoBtn"
+        android:id="@+id/listaContacto" />
 </RelativeLayout>

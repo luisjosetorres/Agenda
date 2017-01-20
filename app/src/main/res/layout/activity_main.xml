@@ -28,13 +28,25 @@
         android:layout_alignParentStart="true"
         android:id="@+id/busquedaClienteET"
         android:layout_toStartOf="@+id/busquedaClienteBtn"
-        android:hint="Introducir nombre ó RFC"
+        android:hint="Introducir razon social ó RFC"
         android:layout_above="@+id/clienteList" />
 
-    <ListView
+    <Button
+        android:text="Agregar Cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/agregarClienteBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <ExpandableListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/busquedaClienteBtn"
+        android:layout_below="@+id/busquedaClienteET"
         android:layout_alignParentStart="true"
-        android:id="@+id/clienteList" />
+        android:layout_above="@+id/agregarClienteBtn"
+        android:id="@+id/listaClientes" />
+
+
 </RelativeLayout>
