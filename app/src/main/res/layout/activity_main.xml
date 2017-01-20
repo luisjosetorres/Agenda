@@ -10,8 +10,31 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.luis.agenda.MainActivity">
 
-    <TextView
+    <Button
+        android:text="Buscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/busquedaClienteBtn"
+        android:background="?attr/colorButtonNormal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/busquedaClienteET"
+        android:layout_toStartOf="@+id/busquedaClienteBtn"
+        android:hint="Introducir nombre ó RFC"
+        android:layout_above="@+id/clienteList" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/busquedaClienteBtn"
+        android:layout_alignParentStart="true"
+        android:id="@+id/clienteList" />
 </RelativeLayout>
