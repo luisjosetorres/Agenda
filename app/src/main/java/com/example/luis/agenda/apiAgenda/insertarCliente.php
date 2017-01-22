@@ -1,5 +1,9 @@
 <?php
-require 'taxi.php';
+/**
+ * Insertar una nueva meta en la base de datos
+ */
+
+require 'cliente.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -7,13 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $body = json_decode(file_get_contents("php://input"), true);
 
     // Insertar meta
-    $retorno = Taxi::insert(
-        $body['modeloTaxi'],
-        $body['placasTaxi'],
-        $body['antiguedad'],
-        $body['seguroTaxi'],
-        $body['kilometrosTaxi'],
-        $body['numeroEconomico']);
+    print_r($body);
+    $retorno = Cliente::insert(
+        $body['telefonoCliente'],
+        $body['empresa'],
+        $body['emailCliente'],
+        $body['direccionCliente'],
+        $body['rfcCliente'],
+        $body['razonSocialCliente']);
 
     if ($retorno) {
         // Código de éxito

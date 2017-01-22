@@ -1,17 +1,14 @@
 <?php
-require 'taxi.php';
+require 'cliente.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // Manejar petición GET
-    $taxi = taxi::getAll();
+    $cliente = cliente::getAll();
 
-    if ($taxi) {
+    if ($cliente) {
 
-        $datos["estado"] = 1;
-        $datos["taxi"] = $taxi;
-
-        print json_encode($datos);
+        print json_encode($cliente);
     } else {
         print json_encode(array(
             "estado" => 2,

@@ -11,17 +11,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp"
         android:id="@+id/rfcCliente"
-        android:textSize="24sp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rfcCliente"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp"
-        android:id="@+id/emailCliente"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:text="TextView"
@@ -38,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
         android:id="@+id/telefonoCliente"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:layout_alignBaseline="@+id/rfcCliente"
         android:layout_alignBottom="@+id/rfcCliente"
         android:layout_alignParentEnd="true" />
@@ -47,10 +37,20 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/emailCliente"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/emailCliente"
+        android:textSize="18sp"
+        android:layout_below="@+id/rfcCliente"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:id="@+id/direccionCliente"
-        android:textSize="24sp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/emailCliente"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
