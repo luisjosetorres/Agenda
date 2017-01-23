@@ -19,7 +19,7 @@ public class AdaptadorDeContacto extends ArrayAdapter<ContactoModelo> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = convertView;
         if (null == convertView) {
-            v = inflater.inflate(R.layout.item_contacto, parent, false);
+            v = inflater.inflate(R.layout.itemcontacto, parent, false);
         }
 
         TextView nombre = (TextView) v.findViewById(R.id.nombreContacto);

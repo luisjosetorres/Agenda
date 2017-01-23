@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("entro a agregarClientes");
                 Intent intent=new Intent(MainActivity.this,AgregarCliente.class);
                 startActivity(intent);
             }
