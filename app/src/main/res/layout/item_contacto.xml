@@ -5,11 +5,20 @@
 
     <TextView
         android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombreContacto"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/nombreContacto"
+        android:id="@+id/apellidoContacto"
+        android:layout_alignBaseline="@+id/nombreContacto"
+        android:layout_alignBottom="@+id/nombreContacto"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="112dp"
         android:textSize="24sp" />
 
     <TextView
@@ -19,16 +28,26 @@
         android:layout_below="@+id/nombreContacto"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp"
-        android:id="@+id/celularContacto"
+        android:id="@+id/puestoContacto"
         android:textSize="24sp" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/correoContacto"
-        android:layout_marginTop="24dp"
+        android:id="@+id/telefonoContacto"
         android:textSize="24sp"
-        android:layout_below="@+id/celularContacto"
-        android:layout_alignParentStart="true" />
+        android:layout_alignBaseline="@+id/puestoContacto"
+        android:layout_alignBottom="@+id/puestoContacto"
+        android:layout_alignStart="@+id/apellidoContacto" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/puestoContacto"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp"
+        android:id="@+id/emailContacto"
+        android:textSize="24sp" />
 </RelativeLayout>

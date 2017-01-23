@@ -5,7 +5,7 @@ import android.content.*;
 import android.net.*;
 import android.os.*;
 import android.util.Log;
-import android.view.View;
+import android.view.*;
 import android.widget.*;
 import com.example.luis.agenda.controlador.*;
 import com.example.luis.agenda.modelo.*;
@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
     ArrayAdapter adaptador;
     HttpURLConnection con;
     Button agregar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,38 @@ public class MainActivity extends Activity {
         lista = (ListView) findViewById(R.id.listaClientes);
         agregar=(Button)findViewById(R.id.agregarClienteBtn);
         agregarClientes();
+        eventosLista();
+        conectar();
+    }
+
+    public void agregarClientes(){
+        agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,AgregarCliente.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void eventosLista(){
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int posicion=position+1;
+                System.out.println(posicion);
+                Intent intent=new Intent(MainActivity.this,Contacto.class);
+                intent.putExtra("id",""+posicion+"");
+                startActivity(intent);
+                //System.out.println(posicion+1);
+
+            }
+        });
+
+    }
+
+    public void conectar(){
         try{
             ConnectivityManager connMgr = (ConnectivityManager)
                     getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -42,16 +75,6 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void agregarClientes(){
-        agregar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,AgregarCliente.class);
-                startActivity(intent);
-            }
-        });
-    }
-
     public class JsonTask extends AsyncTask<URL, Void, List<Cliente>> {
 
         @Override
@@ -64,7 +87,7 @@ public class MainActivity extends Activity {
                 int statusCode = con.getResponseCode();
                 if(statusCode!=200) {
                     clientes = new ArrayList<>();
-                    clientes.add(new Cliente("Error",null,null,null,null,null));
+                    clientes.add(new Cliente("Error",null,null,null,null,null,null));
                 } else {
                     InputStream in = new BufferedInputStream(con.getInputStream());
                     JsonClienteParser parser = new JsonClienteParser();

@@ -1,6 +1,7 @@
 package com.example.luis.agenda.modelo;
 
 public class Cliente {
+    private String id;
     private String telefono;
     private String empresa;
     private String email;
@@ -8,7 +9,8 @@ public class Cliente {
     private String rfc;
     private String razonSocial;
 
-    public Cliente(String telefono, String empresa, String email, String direccion, String rfc, String razonSocial) {
+    public Cliente(String id, String telefono, String empresa, String email, String direccion, String rfc, String razonSocial) {
+        this.id = id;
         this.telefono = telefono;
         this.empresa = empresa;
         this.email = email;
@@ -63,5 +65,13 @@ public class Cliente {
 
     public void setRazonSocial(String razonSocial) {
         this.razonSocial = razonSocial;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
